@@ -2,14 +2,13 @@
   "version": "0.0.1",
   "name": "fccdevtools",
   "displayName": "%displayName%",
-  "author": "Elypia",
-  "publisher": "elypia",
+  "author": "sethfalco",
+  "publisher": "sethfalco",
   "icon": "assets/fccdevtools-logo.png",
-  "homepage": "https://gitlab.com/Elypia/fccdevtools#readme",
+  "homepage": "https://gitlab.com/sethfalco/fccdevtools#readme",
   "description": "%description%",
   "license": "Apache-2.0",
   "keywords": [
-    "elypia",
     "freecodecamp"
   ],
   "categories": [
@@ -17,10 +16,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/Elypia/fccdevtools.git"
+    "url": "https://gitlab.com/sethfalco/fccdevtools.git"
   },
   "bugs": {
-    "url": "https://gitlab.com/Elypia/fccdevtools/issues"
+    "url": "https://gitlab.com/sethfalco/fccdevtools/issues"
   },
   "main": "./out/extension.js",
   "activationEvents": [
