@@ -1,5 +1,5 @@
 /*
- * Copyright 2020-2020 Seth Falco and Contributors (https://gitlab.com/SethFalco/fccdevtools/-/graphs/master)
+ * Copyright 2020-2020 Seth Falco and Contributors (https://github.com/SethFalco/fccDevTools/graphs/contributors)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.

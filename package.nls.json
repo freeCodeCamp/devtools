@@ -1,7 +1,6 @@
 {
   "displayName": "freeCodeCamp Dev Tools",
   "description": "Adds conveniences for developers when modifying the freeCodeCamp curriculum.",
-  "configuration.hosts.description": "Locations that resources can be opened at.",
   "fccDevTools.command.openInBrowser": "freeCodeCamp: Open in Browser",
   "fccDevTools.defaultHost.description": "The default host to use if the not specified.",
   "fccDevTools.simpleBrowser.description": "If to use the built-in VSC browser. (Doesn't work very well for freeCodeCamp.)"
