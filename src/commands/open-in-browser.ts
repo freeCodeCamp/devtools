@@ -32,12 +32,12 @@ export async function openInBrowser(host: string | undefined) {
     host = 'http://' + host;
  
   const url = buildUrl(host, challenge);
-  const uri = vscode.Uri.parse(url);
-  
   const isSimpleBrowser = config.get('simpleBrowser', false);
 
-  if (isSimpleBrowser)
+  if (isSimpleBrowser) {
     vscode.commands.executeCommand('simpleBrowser.show', url);
-  else
+  } else {
+    const uri = vscode.Uri.parse(url);
     vscode.env.openExternal(uri);
+  }
 }
