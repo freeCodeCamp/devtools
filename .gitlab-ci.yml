@@ -1,0 +1,29 @@
+image: node:12.18.3-alpine3.12
+
+cache:
+  policy: pull-push
+  paths:
+    - node_modules/
+
+before_script:
+  - npm install
+
+build:
+  stage: build
+  script:
+    - npm run compile
+
+test:
+  stage: test
+  script:
+    - npm run compile
+    - npm run test
+
+deploy:
+  stage: deploy
+  only:
+    - tags
+  script:
+    - npm run compile
+    - npm run package
+    - npm run publish

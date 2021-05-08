@@ -1,0 +1,80 @@
+{
+  "version": "0.0.1",
+  "name": "fccdevtools",
+  "displayName": "%displayName%",
+  "author": "Elypia",
+  "publisher": "elypia",
+  "icon": "assets/fccdevtools-logo.png",
+  "homepage": "https://gitlab.com/Elypia/fccdevtools#readme",
+  "description": "%description%",
+  "license": "Apache-2.0",
+  "keywords": [
+    "elypia",
+    "freecodecamp"
+  ],
+  "categories": [
+    "Other"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/Elypia/fccdevtools.git"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/Elypia/fccdevtools/issues"
+  },
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onCommand:fccDevTools.command.openInBrowser"
+  ],
+  "contributes": {
+    "configuration": {
+      "title": "%displayName%",
+      "properties": {
+        "fccDevTools.defaultHost": {
+          "type": "string",
+          "scope": "resource",
+          "default": "https://freecodecamp.org",
+          "description": "%fccDevTools.defaultHost.description%"
+        },
+        "fccDevTools.simpleBrowser": {
+          "type": "boolean",
+          "scope": "resource",
+          "default": false,
+          "description": "%fccDevTools.simpleBrowser.description%"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "fccDevTools.command.openInBrowser",
+        "title": "%fccDevTools.command.openInBrowser%"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p  ./",
+    "lint": "eslint . --ext .ts,.tsx",
+    "watch": "tsc -watch -p ./",
+    "test": "node ./out/test/runTest.js",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "engines": {
+    "vscode": "^1.14.0"
+  },
+  "devDependencies": {
+    "@istanbuljs/nyc-config-typescript": "^1.0.1",
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.0.3",
+    "@types/node": "^14.6.3",
+    "@types/vscode": "^1.14.0",
+    "@typescript-eslint/eslint-plugin": "^3.10.1",
+    "@typescript-eslint/parser": "^3.10.1",
+    "eslint": "^7.8.1",
+    "mocha": "^8.1.3",
+    "nyc": "^15.1.0",
+    "typescript": "^3.9.7",
+    "vsce": "^1.79.5",
+    "vscode-test": "^1.4.0"
+  }
+}

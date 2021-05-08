@@ -1,0 +1,13 @@
+.vscode/
+.vscode-test/
+.nycrc
+out/test/
+src/
+test-assets/
+.gitignore
+.gitlab-ci.yml
+.vscodeignore
+*.vsix
+NOTICE
+package-lock.json
+tsconfig.json
