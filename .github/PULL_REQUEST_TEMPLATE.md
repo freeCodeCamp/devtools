@@ -15,7 +15,7 @@
 
 - [ ] Tested changes locally.
 
-#### Closed
+#### Closes
 <!-- If your pull request closes an issue, replace the XXXXX below with the issue number.-->
 
 #XXXXX

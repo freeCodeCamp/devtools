@@ -1,0 +1,36 @@
+name: Execute Tests
+on:
+  push:
+  pull_request:
+
+# https://code.visualstudio.com/api/working-with-extensions/continuous-integration#github-actions
+jobs:
+  test:
+    name: Test
+    strategy:
+      matrix:
+        os: [ubuntu-20.04, windows-latest]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@v2
+
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Compile TypeScript to JavaScript
+        run: npm run compile
+
+      - name: Execute Tests in a Virtual X Server
+        run: xvfb-run -a npm run test
+        if: runner.os == 'Linux'
+
+      - name: Execute Tests
+        run: npm run test
+        if: runner.os != 'Linux'
