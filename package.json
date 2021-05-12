@@ -2,12 +2,12 @@
   "version": "0.0.1",
   "name": "fccdevtools",
   "displayName": "%displayName%",
-  "author": "sethfalco",
-  "publisher": "sethfalco",
+  "author": "freecodecamp",
+  "publisher": "freeCodeCamp-org",
   "icon": "assets/fccdevtools-logo.png",
-  "homepage": "https://github.com/sethfalco/fccdevtools#readme",
+  "homepage": "https://github.com/freeCodeCamp/devtools#readme",
   "description": "%description%",
-  "license": "Apache-2.0",
+  "license": "BSD-3-Clause",
   "keywords": [
     "freecodecamp"
   ],
@@ -16,10 +16,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/sethfalco/fccdevtools.git"
+    "url": "https://github.com/freeCodeCamp/devtools.git"
   },
   "bugs": {
-    "url": "https://github.com/sethfalco/fccdevtools/issues"
+    "url": "https://github.com/freeCodeCamp/devtools/issues"
   },
   "main": "./out/extension.js",
   "activationEvents": [
