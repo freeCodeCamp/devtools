@@ -1,0 +1,5 @@
+{
+  "fccDevTools.command.openInBrowser": "freeCodeCamp: Otwórz w przeglądarce",
+  "fccDevTools.defaultHost.description": "Domyślny host do użytku jeżeli brak sprecyzowania.",
+  "fccDevTools.simpleBrowser.description": "Czy ma być użyta prosta wbudowana przeglądarka. (Nie działa zbyt dobrze dla freeCodeCamp.)"
+}
