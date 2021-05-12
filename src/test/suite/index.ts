@@ -2,6 +2,9 @@ import * as path from 'path';
 import * as Mocha from 'mocha';
 import * as glob from 'glob';
 
+/**
+ * https://code.visualstudio.com/api/working-with-extensions/testing-extension#the-test-runner-script
+ */
 export function run(): Promise<void> {
   const options: Mocha.MochaOptions = {
     color: true,
