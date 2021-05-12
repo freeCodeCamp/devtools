@@ -1,20 +1,17 @@
-<div align="center">
-
 # freeCodeCamp Dev Tools
-</div>
 
-## About
-**freeCodeCamp Dev Tools** is an extension for [Visual Studio Code](https://code.visualstudio.com/) that adds basic commands to make development easier.
+[![Pull Requests Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](https://makeapullrequest.com/)
+[![Rocket.Chat](https://chat.freecodecamp.org/api/v1/shield.svg?type=online&icon=false&name=Chat)](https://chat.freecodecamp.org/)
+
+An extension for [Visual Studio Code](https://code.visualstudio.com/) to aid in
+maintaining the [freeCodeCamp](https://www.freecodecamp.org/) curriculum.
 
 ## Features
+
 ### Open in Browser
-Adds a command to open a challenge in the browser for quick manual testing.
+Adds a command that opens the challenge in the active editor in the default
+browser.
 
-## Open-Source
-This project is open-source under the [Apache 2.0] license!
-While not legal advice, you can find a [TL;DR] that sums up what
-you're allowed and not allowed to do along with any requirements if you
-want to use or derive work from this repository!
-
-[Apache 2.0]: https://www.apache.org/licenses/LICENSE-2.0 "Apache 2.0 License"
-[TL;DR]: https://tldrlegal.com/license/apache-license-2.0-(apache-2.0) "TL;DR of Apache 2.0"
+By default this will open the challenge in `freecodecamp.org`. This can be
+configured to another host such a testing server or locally in the
+[settings](https://code.visualstudio.com/docs/getstarted/settings).
