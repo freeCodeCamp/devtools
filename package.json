@@ -55,6 +55,7 @@
     "lint": "eslint . --ext .ts,.tsx",
     "watch": "tsc -watch -p ./",
     "test": "node ./out/test/runTest.js",
+    "test:xvfb": "xvfb-run -a npm run test",
     "package": "vsce package",
     "publish": "vsce publish"
   },
