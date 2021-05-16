@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
 import { WorkspaceConfiguration } from 'vscode';
+import { Challenge } from '../models/challenge';
 import { buildUrl, tokenizeDocument } from '../utils/challenge-utils';
 import { interpolateVariables, interpolateCommands } from '../utils/interpolator';
 
@@ -15,7 +16,15 @@ export async function openInBrowser(host: string | undefined) {
   if (!document)
     throw new Error('document can not be null');
 
-  const challenge = tokenizeDocument(document);
+  let challenge: Challenge;
+
+  try {
+    challenge = tokenizeDocument(document);
+  } catch (err) {
+    const { message } = err;
+    vscode.window.showErrorMessage(`Unable to open in browser. ${message}`);
+    return
+  }
 
   const config = vscode.workspace.getConfiguration('fccDevTools', document.uri);
   const defaultHost = config.get('defaultHost', 'https://freecodecamp.org');

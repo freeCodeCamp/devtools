@@ -34,7 +34,7 @@ export function tokenizeChallenge(fileName: string, dashedName: string): Challen
   const match = URI_PATTERN.exec(fileName);
 
   if (!match)
-    throw new Error('document is not a freeCodeCamp challenge')
+    throw new Error('Document is not a freeCodeCamp challenge.')
 
   const result: Challenge = {
     language: match[2],
@@ -63,7 +63,7 @@ export function getDashedName(content: string): string {
   const dashedName = DASHED_NAME_PATTERN.exec(content);
 
   if (!dashedName)
-    throw new Error('dashedName not found in document');
+    throw new Error('Document does not have "dashedName" property.');
 
   return dashedName[1];
 }
