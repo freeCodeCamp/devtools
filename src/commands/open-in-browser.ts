@@ -32,10 +32,22 @@ export async function openInBrowser(host: string | undefined) {
   else if (!host)
     return;
 
-  host = processHost(host, config);
+  try {
+    host = processHost(host, config);
+  } catch (err) {
+    const { message } = err;
+    vscode.window.showErrorMessage(`Unable to interpolate host string. ${message}`);
+    return;
+  }
 
   const url = buildUrl(host, challenge);
-  openUrl(url, config);
+
+  try {
+    openUrl(url, config);
+  } catch (err) {
+    const { message } = err;
+    vscode.window.showErrorMessage(`Unable to open challenge due to malformed URL. ${message}`);
+  }
 }
 
 /**
@@ -71,11 +83,11 @@ function processHost(host: string, config: WorkspaceConfiguration): string {
  */
 function openUrl(url: string, config: WorkspaceConfiguration) {
   const isSimpleBrowser = config.get('simpleBrowser', false);
+  const uri = vscode.Uri.parse(url, true);
 
   if (isSimpleBrowser) {
     vscode.commands.executeCommand('simpleBrowser.show', url);
   } else {
-    const uri = vscode.Uri.parse(url);
     vscode.env.openExternal(uri);
   }
 }

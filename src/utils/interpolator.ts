@@ -27,7 +27,7 @@ export function interpolateVariables(body: string, variables = process.env): str
     const value = variables[p1];
 
     if (!value)
-      throw new Error('Environment variable not set');
+      throw new Error(`Environment variable "${p1}" is not set.`);
 
     return value;
   });
