@@ -1,5 +1,7 @@
 import * as vscode from 'vscode';
-import { buildUrl, tokenizeDocument } from '../utils';
+import { WorkspaceConfiguration } from 'vscode';
+import { buildUrl, tokenizeDocument } from '../utils/challenge-utils';
+import { interpolateVariables, interpolateCommands } from '../utils/interpolator';
 
 /**
  * Open a challenge in the browser.
@@ -25,13 +27,49 @@ export async function openInBrowser(host: string | undefined) {
     });
   }
 
-  if (!host)
+  if (host === '')
     host = defaultHost;
-  
+  else if (!host)
+    return;
+
+  host = processHost(host, config);
+
+  const url = buildUrl(host, challenge);
+  openUrl(url, config);
+}
+
+/**
+ * Post process of the host. Interpolates varaibles if those
+ * settings are enabled, and cleans the URL.
+ * 
+ * @param host The original host string.
+ * @param config The extension settings.
+ * @returns A new host string.
+ */
+function processHost(host: string, config: WorkspaceConfiguration): string {
+  const isVariables = config.get('interpolateEnvironmentVariables', true);
+
+  if (isVariables)
+    host = interpolateVariables(host);
+
+  const isCommands = config.get('interpolateCommands', false);
+
+  if (isCommands)
+    host = interpolateCommands(host);
+
   if (!host.startsWith('http'))
     host = 'http://' + host;
- 
-  const url = buildUrl(host, challenge);
+
+  return host;
+}
+
+/**
+ * Open a URL in the browser.
+ * 
+ * @param url The URL to open in browser.
+ * @param config The extension settings.
+ */
+function openUrl(url: string, config: WorkspaceConfiguration) {
   const isSimpleBrowser = config.get('simpleBrowser', false);
 
   if (isSimpleBrowser) {

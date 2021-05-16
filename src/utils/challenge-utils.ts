@@ -1,5 +1,5 @@
 import { TextDocument } from "vscode";
-import { Challenge } from "./challenge";
+import { Challenge } from "../models/challenge";
 
 /** Pattern to lex identifiers from a challenge file. */
 const URI_PATTERN = /curriculum([\/\\])challenges\1(.+)\1\d+-(.+?)\1(.+?)\1.+?\.md/i
@@ -12,7 +12,7 @@ const DASHED_NAME_PATTERN = /dashedName: (.+)/;
  * @returns The challenge identifiers.
  * @throws {Error} If document is undefined.
  */
-export function tokenizeDocument(document: TextDocument) {
+export function tokenizeDocument(document: TextDocument): Challenge {
   if (!document)
     throw new Error('document can not be null');
 
@@ -27,7 +27,7 @@ export function tokenizeDocument(document: TextDocument) {
  * @returns The challenge identifiers.
  * @throws {Error} If fileName is undefined or empty.
  */
-export function tokenizeChallenge(fileName: string, dashedName: string) {
+export function tokenizeChallenge(fileName: string, dashedName: string): Challenge {
   if (!fileName)
     throw new Error('fileName can not be null');
 
@@ -50,7 +50,7 @@ export function tokenizeChallenge(fileName: string, dashedName: string) {
  * @param document A document representing a challenge.
  * @returns The dashed name of the challenge.
  */
-export function getDashedNameFromDocument(document: TextDocument) {
+export function getDashedNameFromDocument(document: TextDocument): string {
   const content = document.getText();
   return getDashedName(content);
 }
@@ -59,7 +59,7 @@ export function getDashedNameFromDocument(document: TextDocument) {
  * @param content String representing a challenge.
  * @returns The dashed name of the challenge.
  */
-export function getDashedName(content: string) {
+export function getDashedName(content: string): string {
   const dashedName = DASHED_NAME_PATTERN.exec(content);
 
   if (!dashedName)
@@ -75,7 +75,7 @@ export function getDashedName(content: string) {
  * @param challenge The challenge to open.
  * @returns The URL where the challenge can be completed.
  */
-export function buildUrl(host: string, challenge: Challenge) {
+export function buildUrl(host: string, challenge: Challenge): string {
   const { language, courseName, sectionName, dashedName } = challenge;
 
   switch (language) {

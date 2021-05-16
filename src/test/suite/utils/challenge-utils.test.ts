@@ -1,7 +1,7 @@
 import * as assert from 'assert';
-import { getDashedName, tokenizeChallenge } from '../../utils';
+import { getDashedName, tokenizeChallenge } from '../../../utils/challenge-utils';
 
-suite('utils.ts', () => {
+suite('challenge-utils.ts', () => {
 
   test('No exception on Linux', () => {
     assert.doesNotThrow(() => {
