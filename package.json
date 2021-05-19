@@ -40,6 +40,18 @@
           "scope": "resource",
           "default": false,
           "description": "%fccDevTools.simpleBrowser.description%"
+        },
+        "fccDevTools.interpolateEnvironmentVariables": {
+          "type": "boolean",
+          "scope": "resource",
+          "default": false,
+          "description": "%fccDevTools.interpolateEnvironmentVariables.description%"
+        },
+        "fccDevTools.interpolateCommands": {
+          "type": "boolean",
+          "scope": "resource",
+          "default": false,
+          "description": "%fccDevTools.interpolateCommands.description%"
         }
       }
     },

@@ -3,5 +3,7 @@
   "description": "For helping maintain the curriculum for freeCodeCamp.org.",
   "fccDevTools.command.openInBrowser": "freeCodeCamp: Open in Browser",
   "fccDevTools.defaultHost.description": "Default host to use if not specified.",
-  "fccDevTools.simpleBrowser.description": "If to use the built-in simple browser. (Doesn't work very well for freeCodeCamp.)"
+  "fccDevTools.simpleBrowser.description": "If to use the built-in simple browser. (Doesn't work very well for freeCodeCamp.)",
+  "fccDevTools.interpolateEnvironmentVariables.description": "If to interpolate environment variables in the host string.",
+  "fccDevTools.interpolateCommands.description": "If to interpolate system commands in the host string."
 }
